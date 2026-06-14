@@ -1,16 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    overflow: hidden;
+}
+
 body {
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #141424;
     font-family: Arial;
-    padding: 10px;
 }
 
 .calculator {
-    width: 100%;
-    
+    max-width: 380px;
     background: #2c2c3e;
     padding: 15px;
     border-radius: 25px;
@@ -87,10 +96,6 @@ button:hover {
         font-size: 16px;
     }
 
-    .calculator{
-        max-width: 400px;
-        height: 520px;
-    }
     input {
         height: 60px;
         font-size: 24px;
