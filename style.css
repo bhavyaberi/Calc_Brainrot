@@ -10,7 +10,7 @@ body {
 
 .calculator {
     width: 100%;
-    max-width: 380px;
+    
     background: #2c2c3e;
     padding: 15px;
     border-radius: 25px;
@@ -87,6 +87,10 @@ button:hover {
         font-size: 16px;
     }
 
+    .calculator{
+        max-width: 400px;
+        height: 520px;
+    }
     input {
         height: 60px;
         font-size: 24px;
