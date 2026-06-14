@@ -22,7 +22,7 @@ document.getElementById("equal").addEventListener("click", function () {
 
         expression = expression.replace(/(\d+)%/g, '($1/100)');
 
-        display.value = eval(expression);
+        let result = eval(expression);
 
         if (!isFinite(result)) {
             display.value = "Error: Division by zero";
@@ -32,7 +32,7 @@ document.getElementById("equal").addEventListener("click", function () {
         display.value = result;
     }
     catch (error) {
-        display.value = "Error: Zero Division";
+        display.value = "Error";
     }
 
 
