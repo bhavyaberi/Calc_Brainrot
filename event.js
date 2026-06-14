@@ -13,9 +13,27 @@ function backspace() {
 }
 
 function percentage(value) {
-    display.value = display.value / 100;
+    display.value += value;
 }
 
 document.getElementById("equal").addEventListener("click", function () {
-    display.value = eval(display.value);
+    try {
+        let expression = display.value;
+
+        expression = expression.replace(/(\d+)%/g, '($1/100)');
+
+        display.value = eval(expression);
+
+        if (!isFinite(result)) {
+            display.value = "Error: Division by zero";
+            return;
+        }
+
+        display.value = result;
+    }
+    catch (error) {
+        display.value = "Error: Zero Division";
+    }
+
+
 });
