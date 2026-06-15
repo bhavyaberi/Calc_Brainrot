@@ -13,8 +13,6 @@
     <div class="calculator">
         <input type="text" id="display" readonly aria-label="Calculator Display">
 
-        <br>
-
         <div class="top-row">
             <button onclick="clearDisplay()" class="gray" aria-label="Clear">C</button>
             <button onclick="backspace()" class="gray" aria-label="Backspace">⌫</button>
@@ -47,19 +45,6 @@
 
         <button id="equal" aria-label="Equals">=</button>
 
-    </div>
-
-    <div id="game-container" style="display: none;">
-        <div id="game-overlay">
-            <div id="game-header">
-                <span id="score">Score: 0</span>
-                <button id="close-game">X</button>
-            </div>
-            <div id="game-area">
-                <div id="player">🗿</div>
-            </div>
-            <div id="game-msg">OH NO! BRAINROT DETECTED! 💀<br>Catch the brainrot!</div>
-        </div>
     </div>
 
     <script src="event.js"></script>
