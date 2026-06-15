@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="calculator">
@@ -18,37 +16,46 @@
             <button onclick="backspace()" class="gray" aria-label="Backspace">⌫</button>
         </div>
 
+        <div class="button-grid">
+            <button onclick="addValue('1')">1</button>
+            <button onclick="addValue('2')">2</button>
+            <button onclick="addValue('3')">3</button>
+            <button onclick="addValue('+')" class="op">+</button>
 
-        <div class="button">
-            <button onclick="addValue('1')" aria-label="1">1</button>
-            <button onclick="addValue('2')" aria-label="2">2</button>
-            <button onclick="addValue('3')" aria-label="3">3</button>
-            <button onclick="addValue('+')" class="op" aria-label="Plus">+</button>
+            <button onclick="addValue('4')">4</button>
+            <button onclick="addValue('5')">5</button>
+            <button onclick="addValue('6')">6</button>
+            <button onclick="addValue('-')" class="op">-</button>
 
-            <button onclick="addValue('4')" aria-label="4">4</button>
-            <button onclick="addValue('5')" aria-label="5">5</button>
-            <button onclick="addValue('6')" aria-label="6">6</button>
-            <button onclick="addValue('-')" class="op" aria-label="Minus">-</button>
+            <button onclick="addValue('7')">7</button>
+            <button onclick="addValue('8')">8</button>
+            <button onclick="addValue('9')">9</button>
+            <button onclick="addValue('*')" class="op">*</button>
 
-            <button onclick="addValue('7')" aria-label="7">7</button>
-            <button onclick="addValue('8')" aria-label="8">8</button>
-            <button onclick="addValue('9')" aria-label="9">9</button>
-            <button onclick="addValue('*')" class="op" aria-label="Multiply">*</button>
-
-            <button onclick="addValue('0')" aria-label="0">0</button>
-            <button onclick="addValue('.')" aria-label="Decimal point">.</button>
-
-            <button onclick="percentage('%')" class="op" aria-label="Percentage">%</button>
-            <button onclick="addValue('/')" class="op" aria-label="Divide">/</button>
-
+            <button onclick="addValue('0')">0</button>
+            <button onclick="addValue('.')">.</button>
+            <button onclick="percentage('%')" class="op">%</button>
+            <button onclick="addValue('/')" class="op">/</button>
         </div>
 
-        <button id="equal" aria-label="Equals">=</button>
+        <button id="equal">=</button>
 
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <div id="game-overlay">
+            <div id="game-header">
+                <span id="score">Score: 0</span>
+                <button id="close-game">X</button>
+            </div>
+            <div id="game-area">
+                <div id="player">🗿</div>
+            </div>
+            <div id="game-msg">OH NO! BRAINROT DETECTED! 💀<br>Catch the brainrot!</div>
+        </div>
     </div>
 
     <script src="event.js"></script>
 
 </body>
-
 </html>
