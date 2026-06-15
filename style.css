@@ -5,26 +5,27 @@
 }
 
 html,body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #141424;
     font-family: Arial;
+    padding: 20px;
 }
 
 .calculator {
+    width: 100%;
     max-width: 380px;
     background: #2c2c3e;
     padding: 15px;
     border-radius: 25px;
     box-sizing: border-box;
-    padding: 10px;
 }
 
 input {
@@ -50,6 +51,7 @@ input {
 .button {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     justify-items: center;
     align-items: center;
 }
@@ -59,23 +61,123 @@ button {
     width: 65px;
     border-radius: 50%;
     border: none;
-    margin: 5px;
     font-size: 18px;
     font-weight: bold;
     background: #4e4e6a;
     color: white;
     cursor: pointer;
     transition: 0.2s;
+    touch-action: manipulation;
 }
 
 button:hover {
     transform: scale(1.05);
 }
 
-.gray {
+button:active {
+    background: #5e5e7a;
+}
+
+/* Brainrot Game Styles */
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-overlay {
+    width: 90%;
+    max-width: 500px;
+    height: 80vh;
+    background: #1a1a2e;
+    border: 3px solid #6c6c8f;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #2c2c3e;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#close-game {
+    background: #ff4d4d;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#game-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+#player {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    user-select: none;
+    transition: left 0.1s ease-out;
+}
+
+.falling-object {
+    position: absolute;
+    top: -50px;
+    font-size: 30px;
+    user-select: none;
+}
+
+#game-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    pointer-events: none;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    width: 100%;
+}
+
+.fade-out {
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 480px) {
     background: #3a3a52;
     border-radius: 35px;
     flex: 1;
+    margin: 5px;
 }
 
 .op {
@@ -90,28 +192,42 @@ button:hover {
     margin-top: 10px;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 480px) {
+    .calculator {
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    input {
+        height: 60px;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
     button {
         height: 55px;
         width: 55px;
         font-size: 16px;
     }
 
-    input {
-        height: 60px;
-        font-size: 24px;
+    .button {
+        gap: 5px;
+    }
+
+    #equal {
+        height: 55px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 350px) {
     button {
-        height: 50px;
-        width: 50px;
+        height: 45px;
+        width: 45px;
         font-size: 14px;
     }
 
     input {
-        height: 55px;
-        font-size: 22px;
+        height: 50px;
+        font-size: 20px;
     }
-} */
+}
